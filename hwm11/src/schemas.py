@@ -8,7 +8,7 @@ class ContactModel(BaseModel):
     email: EmailStr
     password: str = Field(min_length=6, max_length=10)
     phone: int = Field(gt=100, le=999999999)
-    birthday: date
+    birthday: date = Field(date.today())
 
 
 class UpdateContactRoleModel(BaseModel):
